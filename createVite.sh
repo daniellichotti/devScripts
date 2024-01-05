@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env sh
+
 cd ~/dev
 read -p "Digite o nome do projeto: " name_project &&
 pnpm create vite $name_project --template react-ts &&
