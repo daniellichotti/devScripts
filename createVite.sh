@@ -1,18 +1,26 @@
-#!/bin/zsh
+#!/bin/bash
 
-cd ~/dev &&
+# Diretório onde os projetos serão criados
+projects_directory=~/dev
+
+# Verifica se o diretório 'dev' existe e cria se não existir
+if [ ! -d "$projects_directory" ]; then
+  mkdir -p "$projects_directory"
+fi
+
+cd $projects_directory &&
 
 #read -p "Digite o nome do projeto: " name_project &&
 name_project=''
 while [ -z "$name_project" ]; do
-  read "name_project?Digite o nome do projeto: "
+  read -p "Digite o nome do projeto: " name_project
 done
 sleep 1 &&
 
 pnpm create vite $name_project --template react-ts &&
 
 # Aguarde 5 segundos para garantir que a estrutura do projeto seja totalmente criada
-sleep 5 &&
+#sleep 5 &&
 
 cd "$name_project" &&
 
