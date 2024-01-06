@@ -12,7 +12,7 @@ done
 pnpm create vite $name_project --template react-ts &&
 
 # Aguarde 5 segundos para garantir que a estrutura do projeto seja totalmente criada
-sleep 5
+sleep 5 &&
 
 cd "$name_project" &&
 
