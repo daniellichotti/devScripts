@@ -5,7 +5,7 @@ cd ~/dev &&
 #read -p "Digite o nome do projeto: " name_project &&
 name_project=''
 while [ -z "$name_project" ]; do
-  read -p "Digite o nome do projeto: " name_project
+  read name_project
 done
 
 pnpm create vite $name_project --template react-ts &&
